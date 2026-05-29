@@ -1,33 +1,36 @@
 #include "../processTracker/ProcessTracker.hpp"
-#include <iostream>
+#include "../sessionManager/SessionManager.hpp"
+
 #include <chrono>
 #include <thread>
 
-int main(){
+int main()
+{
     ProcessTracker tracker;
-    std::string lastProcess = "";
 
-    while(true) {
-        std::string process =
-            tracker.getProcessName();
+    SessionManager sessionManager;
 
-        std::string title =
-            tracker.getWindowTitle();
+    while (true)
+    {
+        ActivitySnapshot snapshot =
+            tracker.capture();
 
-        if(process != lastProcess)
-        {
-            std::cout
-                << process
-                << " | "
-                << title
-                << std::endl;
+        std::cout
+            << snapshot.processName
+            << " | "
+            << snapshot.windowTitle
+            << std::endl;
 
-            lastProcess = process;
-        }
+        sessionManager.update(
+            snapshot
+        );
 
         std::this_thread::sleep_for(
-            std::chrono::milliseconds(500)
+            std::chrono::milliseconds(
+                500
+            )
         );
     }
+
     return 0;
 }

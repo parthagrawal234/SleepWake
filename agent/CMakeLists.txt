@@ -4,15 +4,24 @@ project(agent)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(include)
-
 add_executable(
     agent
+
     src/core/main.cpp
+
     src/processTracker/ProcessTracker.cpp
+
+    src/sessionManager/SessionManager.cpp
+
+    src/storage/Database.cpp
+
+    src/storage/SessionRepository.cpp
+
+    external/sqlite/sqlite3.c
 )
 
 target_link_libraries(
     agent
     psapi
+    external/sqlite
 )

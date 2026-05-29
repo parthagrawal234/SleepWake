@@ -47,16 +47,20 @@ build cmake_object_order_depends_target_agent: phony || .
 build CMakeFiles/agent.dir/src/core/main.cpp.obj: CXX_COMPILER__agent_unscanned_ C$:/Users/Parth/OneDrive/Documents/Projects/SleepWake/agent/src/core/main.cpp || cmake_object_order_depends_target_agent
   DEP_FILE = CMakeFiles\agent.dir\src\core\main.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/Users/Parth/OneDrive/Documents/Projects/SleepWake/agent/include
   OBJECT_DIR = CMakeFiles\agent.dir
   OBJECT_FILE_DIR = CMakeFiles\agent.dir\src\core
 
 build CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj: CXX_COMPILER__agent_unscanned_ C$:/Users/Parth/OneDrive/Documents/Projects/SleepWake/agent/src/processTracker/ProcessTracker.cpp || cmake_object_order_depends_target_agent
   DEP_FILE = CMakeFiles\agent.dir\src\processTracker\ProcessTracker.cpp.obj.d
   FLAGS = -std=gnu++17
-  INCLUDES = -IC:/Users/Parth/OneDrive/Documents/Projects/SleepWake/agent/include
   OBJECT_DIR = CMakeFiles\agent.dir
   OBJECT_FILE_DIR = CMakeFiles\agent.dir\src\processTracker
+
+build CMakeFiles/agent.dir/src/sessionManager/SessionManager.cpp.obj: CXX_COMPILER__agent_unscanned_ C$:/Users/Parth/OneDrive/Documents/Projects/SleepWake/agent/src/sessionManager/SessionManager.cpp || cmake_object_order_depends_target_agent
+  DEP_FILE = CMakeFiles\agent.dir\src\sessionManager\SessionManager.cpp.obj.d
+  FLAGS = -std=gnu++17
+  OBJECT_DIR = CMakeFiles\agent.dir
+  OBJECT_FILE_DIR = CMakeFiles\agent.dir\src\sessionManager
 
 
 # =============================================================================
@@ -66,7 +70,7 @@ build CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj: CXX_COMPIL
 #############################################
 # Link the executable agent.exe
 
-build agent.exe: CXX_EXECUTABLE_LINKER__agent_ CMakeFiles/agent.dir/src/core/main.cpp.obj CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj
+build agent.exe: CXX_EXECUTABLE_LINKER__agent_ CMakeFiles/agent.dir/src/core/main.cpp.obj CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj CMakeFiles/agent.dir/src/sessionManager/SessionManager.cpp.obj
   LINK_LIBRARIES = -lpsapi  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\agent.dir
   POST_BUILD = cd .
