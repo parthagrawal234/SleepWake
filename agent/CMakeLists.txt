@@ -20,8 +20,13 @@ add_executable(
     external/sqlite/sqlite3.c
 )
 
+target_include_directories(
+    agent
+    PRIVATE
+    external/sqlite
+)
+
 target_link_libraries(
     agent
     psapi
-    external/sqlite
 )

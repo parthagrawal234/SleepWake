@@ -1,6 +1,15 @@
 #include "SessionManager.hpp"
 
+#include "../storage/SessionRepository.hpp"
+
 #include <iostream>
+
+SessionManager::SessionManager(
+    SessionRepository& repository
+)
+    : repository(repository)
+{
+}
 
 void SessionManager::update(
     const ActivitySnapshot& snapshot
@@ -10,7 +19,8 @@ void SessionManager::update(
     {
         return;
     }
-    if (!hasSession)
+
+    if(!hasSession)
     {
         currentSession.processName =
             snapshot.processName;
@@ -26,7 +36,7 @@ void SessionManager::update(
         return;
     }
 
-    if (
+    if(
         snapshot.processName !=
         currentSession.processName
     )
@@ -50,6 +60,10 @@ void SessionManager::update(
             << duration.count()
             << " seconds\n"
             << std::endl;
+
+        repository.saveSession(
+            currentSession
+        );
 
         currentSession.processName =
             snapshot.processName;

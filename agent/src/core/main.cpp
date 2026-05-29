@@ -1,25 +1,33 @@
 #include "../processTracker/ProcessTracker.hpp"
 #include "../sessionManager/SessionManager.hpp"
+#include "../storage/Database.hpp"
+#include "../storage/SessionRepository.hpp"
 
 #include <chrono>
 #include <thread>
 
 int main()
 {
+    Database database(
+        "focus.db"
+    );
+
+    SessionRepository repository(
+        database
+    );
+
+    repository.initialize();
+
+    SessionManager sessionManager(
+        repository
+    );
+
     ProcessTracker tracker;
 
-    SessionManager sessionManager;
-
-    while (true)
+    while(true)
     {
         ActivitySnapshot snapshot =
             tracker.capture();
-
-        std::cout
-            << snapshot.processName
-            << " | "
-            << snapshot.windowTitle
-            << std::endl;
 
         sessionManager.update(
             snapshot
