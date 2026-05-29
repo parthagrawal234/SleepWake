@@ -1,0 +1,4 @@
+# ninja log v6
+10	4116	8017692534676403	CMakeFiles/agent.dir/src/core/main.cpp.obj	85fc43ee964a965b
+35	2551	8017693085052011	CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj	c08c5ccde05147e0
+2563	2955	8017693110330437	agent.exe	40cce79f74564117

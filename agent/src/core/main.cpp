@@ -1,17 +1,32 @@
-#include "../process_tracker/ProcessTracker.hpp"
+#include "../processTracker/ProcessTracker.hpp"
 #include <iostream>
 #include <chrono>
 #include <thread>
 
 int main(){
     ProcessTracker tracker;
-    while (true) {
-        std::cout << tracker.getProcessName()
-        << " | "
-        << tracker.getWindowTitle()
-        << std::endl;
+    std::string lastProcess = "";
+
+    while(true) {
+        std::string process =
+            tracker.getProcessName();
+
+        std::string title =
+            tracker.getWindowTitle();
+
+        if(process != lastProcess)
+        {
+            std::cout
+                << process
+                << " | "
+                << title
+                << std::endl;
+
+            lastProcess = process;
+        }
+
         std::this_thread::sleep_for(
-            std::chrono::seconds(1)
+            std::chrono::milliseconds(500)
         );
     }
     return 0;

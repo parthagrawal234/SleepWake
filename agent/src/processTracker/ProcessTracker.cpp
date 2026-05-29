@@ -1,4 +1,3 @@
-#pragma once
 #include "ProcessTracker.hpp"
 
 #include <windows.h>
@@ -22,7 +21,7 @@ std::string ProcessTracker::getProcessName() {
         return "Unknown";
 
     char processName[MAX_PATH];
-    if(GetModeuleBaseNameA(
+    if(GetModuleBaseNameA(
         process,
         NULL,
         processName,
