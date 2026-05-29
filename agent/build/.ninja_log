@@ -1,8 +1,8 @@
 # ninja log v6
-13	420	8017702604090541	agent.exe	40cce79f74564117
-31	2406	8017702022560950	CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj	c08c5ccde05147e0
-13	1077	8017702022340781	CMakeFiles/agent.dir/src/core/main.cpp.obj	85fc43ee964a965b
-16	915	8017709989835389	CMakeFiles/agent.dir/src/core/main.cpp.obj	e7f821eb7d02f9e
-60	1022	8017709990330624	CMakeFiles/agent.dir/src/sessionManager/SessionManager.cpp.obj	1d1a4dda07b42607
-37	2425	8017709990080509	CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj	f5ad8b348ab0f43b
-2432	2695	8017710013965518	agent.exe	cb931f4a699ede40
+61	784	8017828320787716	CMakeFiles/agent.dir/src/storage/Database.cpp.obj	6f710b3821c9baef
+8	827	8017828320223064	CMakeFiles/agent.dir/src/core/main.cpp.obj	e340f8b862234799
+78	881	8017828320974883	CMakeFiles/agent.dir/src/storage/SessionRepository.cpp.obj	31c79107707e6de9
+42	906	8017828320600650	CMakeFiles/agent.dir/src/sessionManager/SessionManager.cpp.obj	f38110e17a3157db
+24	2303	8017828320413201	CMakeFiles/agent.dir/src/processTracker/ProcessTracker.cpp.obj	a8663e5f28526b16
+98	10738	8017828321154888	CMakeFiles/agent.dir/external/sqlite/sqlite3.c.obj	a9e1d8b9e25b56ea
+10744	11037	8017828427567837	agent.exe	a9f0f68b872323a
